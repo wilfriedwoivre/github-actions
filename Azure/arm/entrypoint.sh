@@ -11,7 +11,7 @@ then
   SCOPE = "RESOURCE_GROUP"
 fi
 
-if [[ ${SCOPE,,} == "RESOURCE_GROUP" ]] && [[ -z "$AZURE_RESOURCE_GROUP" ]]
+if [[ $SCOPE = "RESOURCE_GROUP" ]] && [[ -z "$AZURE_RESOURCE_GROUP" ]]
 then
   echo "AZURE_RESOURCE_GROUP is not set." >&2
   exit 1
@@ -41,7 +41,7 @@ else
       echo "Parameters file ${PARAMETERS_FILE} does not exits." >&2
       exit 1
     fi
-    PARAMETERS = "@${PARAMETERS_FILE}"
+    PARAMETERS="@${PARAMETERS_FILE}"
   fi
 fi
 
@@ -55,7 +55,7 @@ fi
 
 # Deploy ARM template
 
-if [[ ${SCOPE,,} == 'RESOURCE_GROUP' ]]
+if [[ $SCOPE = 'RESOURCE_GROUP' ]]
 then
   if [[ $AZURE_TEMPLATE_LOCATION =~ $URI_REGEX ]]
   then
@@ -81,7 +81,7 @@ then
   fi
 fi
 
-if [[ ${SCOPE,,} == 'SUBSCRIPTION' ]]
+if [[ $SCOPE = 'SUBSCRIPTION' ]]
 then
   if [[ $AZURE_TEMPLATE_LOCATION =~ $URI_REGEX ]]
   then
