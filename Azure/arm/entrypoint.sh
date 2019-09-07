@@ -66,7 +66,7 @@ then
       az group deployment create -g "$AZURE_RESOURCE_GROUP" --name "$DEPLOYMENT_NAME" --template-uri "$AZURE_TEMPLATE_LOCATION" --parameters "$PARAMETERS"
     fi
   else
-    TEMPLATE_FILE = "${GITHUB_WORKSPACE}/${AZURE_TEMPLATE_LOCATION}"
+    TEMPLATE_FILE="${GITHUB_WORKSPACE}/${AZURE_TEMPLATE_LOCATION}"
     if [[ ! -e "$TEMPLATE_FILE" ]]
     then
       echo "Template file ${TEMPLATE_FILE} does not exists." >&2
@@ -92,7 +92,7 @@ then
       az deployment create --location "$DEPLOYMENT_LOCATION" --name "$DEPLOYMENT_NAME" --template-uri "$AZURE_TEMPLATE_LOCATION" --parameters "$PARAMETERS"
     fi
   else
-    TEMPLATE_FILE = "${GITHUB_WORKSPACE}/${AZURE_TEMPLATE_LOCATION}"
+    TEMPLATE_FILE="${GITHUB_WORKSPACE}/${AZURE_TEMPLATE_LOCATION}"
     if [[ ! -e "$TEMPLATE_FILE" ]]
     then
       echo "Template file ${TEMPLATE_FILE} does not exists." >&2
