@@ -8,7 +8,7 @@ GUID=$(uuidgen | cut -d '-' -f 1)
 
 if [[ -z "$SCOPE" ]]
 then
-  SCOPE = "RESOURCE_GROUP"
+  SCOPE="RESOURCE_GROUP"
 fi
 
 if [[ $SCOPE = "RESOURCE_GROUP" ]] && [[ -z "$AZURE_RESOURCE_GROUP" ]]
