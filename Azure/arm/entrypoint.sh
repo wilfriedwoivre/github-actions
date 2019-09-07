@@ -27,6 +27,7 @@ fi
 # Download parameters file if it is a remote URL
 
 if [[ -z "$AZURE_TEMPLATE_PARAM_LOCATION" ]]
+  then
   if [[ $AZURE_TEMPLATE_PARAM_LOCATION =~ $URI_REGEX ]]
   then
     PARAMETERS=$(curl "$AZURE_TEMPLATE_PARAM_LOCATION")
