@@ -35,7 +35,7 @@ else
     PARAMETERS=$(curl "$AZURE_TEMPLATE_PARAM_LOCATION")
     echo "Downloaded parameters from ${AZURE_TEMPLATE_PARAM_LOCATION}"
   else
-    PARAMETERS_FILE = "${GITHUB_WORKSPACE}/${AZURE_TEMPLATE_PARAM_LOCATION}"
+    PARAMETERS_FILE="${GITHUB_WORKSPACE}/${AZURE_TEMPLATE_PARAM_LOCATION}"
     if [[ ! -e "$PARAMETERS_FILE" ]]
     then
       echo "Parameters file ${PARAMETERS_FILE} does not exits." >&2
@@ -55,7 +55,7 @@ fi
 
 # Deploy ARM template
 
-if [[ ${SCOPE,,} == "RESOURCE_GROUP" ]]
+if [[ ${SCOPE,,} == 'RESOURCE_GROUP' ]]
 then
   if [[ $AZURE_TEMPLATE_LOCATION =~ $URI_REGEX ]]
   then
@@ -81,7 +81,7 @@ then
   fi
 fi
 
-if [[ ${SCOPE,,} == "SUBSCRIPTION" ]]
+if [[ ${SCOPE,,} == 'SUBSCRIPTION' ]]
 then
   if [[ $AZURE_TEMPLATE_LOCATION =~ $URI_REGEX ]]
   then
