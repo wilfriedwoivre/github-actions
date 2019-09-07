@@ -17,7 +17,7 @@ then
   exit 1
 fi
 
-if [[ -z "$AZURE_TEMPLATE_FILE" ]]
+if [[ -z "$AZURE_TEMPLATE_LOCATION" ]]
 then
     echo "AZURE_TEMPLATE_FILE is not set." >&2
     exit 1
